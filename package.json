@@ -1,0 +1,23 @@
+{
+  "name": "high-blood-pressure-buddies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rucatues/High-Blood-Pressure-Buddies.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rucatues/High-Blood-Pressure-Buddies/issues"
+  },
+  "homepage": "https://github.com/Rucatues/High-Blood-Pressure-Buddies#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.9.2"
+  }
+}
