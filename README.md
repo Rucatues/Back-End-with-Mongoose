@@ -64,4 +64,4 @@ MIT License
 
 ## Credits
 
-Guidance and support for this project was given by a UT bootcamp tutor and CodeAcademy Mongoose/MongoDB courses. 
+Guidance and support for this project was given by a UT bootcamp tutor, CodeAcademy Mongoose/MongoDB courses, and Colt Steele's Web Developer Bootcamp on Udemy. 
