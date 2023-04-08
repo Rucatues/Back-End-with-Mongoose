@@ -15,6 +15,8 @@
 * [Usage Instructions](#usage-instructions)
 * [Technologies Used](#technologies-used)
 * [License](#license)
+* [Credits](#credits)
+
 
 ## Link  
 
@@ -59,3 +61,7 @@ Run the following command in the root directory of your project to start the ser
 ## License
 
 MIT License
+
+## Credits
+
+Guidance and support for this project was given by a UT bootcamp tutor.
