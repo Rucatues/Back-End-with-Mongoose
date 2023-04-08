@@ -1,5 +1,7 @@
 // What consts are needed here ?
 
+const { modelNames } = require("mongoose");
+
 const thoughtSchema = new mongoose.Schema({
     thoughtText: {
         type: String,
@@ -17,10 +19,18 @@ const thoughtSchema = new mongoose.Schema({
         required: true
     },
     // reactions: // Array of nested documents created with the reactionSchema
+    reactions: 
 
 });
 
 // Schema Settings
 // Create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
+thoughtSchema.virtual('reactionLength').get(function () {
+    const reactionLength = this.reactions.length;
+    return reactionLength;
+})
 
-const thought = mongoose.model('Thought', thoughtSchema)
+
+const Thought = mongoose.model('Thought', thoughtSchema);
+
+module.exports = Thought; 
