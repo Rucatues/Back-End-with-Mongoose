@@ -1,19 +1,26 @@
-// thoughtText
-    //  String
-    // Required
-    // Must be between 1 and 280 characters
-    // createdAt
+// What consts are needed here ?
 
-// Date
-    // Set default value to the current timestamp
-    // Use a getter method to format the timestamp on query
+const thoughtSchema = new mongoose.Schema({
+    thoughtText: {
+        type: String,
+        required: true
+        // Must be between 1 and 280 characters
+        // createdAt
+    },
+    createdAt: {
+        type: Date,
+        // Set default value to the current timestamp
+        // Use a getter method to format the timestamp on query
+    },
+    username: {
+        type: String,
+        required: true
+    },
+    // reactions: // Array of nested documents created with the reactionSchema
 
-// username (The user that created this thought)
-    // String
-    // Required
-
-// reactions (These are like replies)
-    // Array of nested documents created with the reactionSchema
+});
 
 // Schema Settings
-    // Create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
+// Create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
+
+const thought = mongoose.model('Thought', thoughtSchema)

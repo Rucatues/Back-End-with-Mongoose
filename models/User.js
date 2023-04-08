@@ -1,6 +1,4 @@
-
-// Schema Settings
-// Create a virtual called friendCount that retrieves the length of the user's friends array field on query.
+// What consts are needed here?
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -21,9 +19,11 @@ const userSchema = new mongoose.Schema({
     // friends: 
     // Array of _id values referencing the User model (self-reference)
 
-
 });
 
-const User = mongoose.model('User', userSchema);
+// Schema Settings
+// Create a virtual called friendCount that retrieves the length of the user's friends array field on query.
 
-module.exports = User;
+const user = mongoose.model('User', userSchema);
+
+module.exports = user;
