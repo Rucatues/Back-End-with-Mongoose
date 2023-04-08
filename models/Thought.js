@@ -1,4 +1,4 @@
-// What consts are needed here ?
+// What consts are needed here ? and what to put in the const brakcets on line 3
 
 const { modelNames } = require("mongoose");
 
@@ -31,6 +31,7 @@ thoughtSchema.virtual('reactionCount').get(function () {
 })
 
 
+// creates a model using our schema
 const Thought = mongoose.model('Thought', thoughtSchema);
 
 module.exports = Thought; 

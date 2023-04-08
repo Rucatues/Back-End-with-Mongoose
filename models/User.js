@@ -29,6 +29,7 @@ userSchema.virtual('friendCount').get(function () {
     return friendCount;
 })
 
+// creates a model using our schema
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
