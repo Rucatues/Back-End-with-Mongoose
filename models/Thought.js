@@ -5,9 +5,9 @@ const { modelNames } = require("mongoose");
 const thoughtSchema = new mongoose.Schema({
     thoughtText: {
         type: String,
-        required: true
-        // Must be between 1 and 280 characters
-        // createdAt
+        required: true,
+        min: 1,
+        max: 280, // Must be between 1 and 280 characters
     },
     createdAt: {
         type: Date,
