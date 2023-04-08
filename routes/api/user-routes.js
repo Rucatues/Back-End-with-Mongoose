@@ -4,23 +4,53 @@ const router = require('express').Router();
 
 // GET all users
 
-// User.find({})
+User.find({})
+    .then(data =>
+        res.json(data))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 
 // GET a single user by its _id and populated thought and friend data
 
-// User.findOne()
+User.findOne()
+    .then(data =>
+        res.json(data))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 
 // POST a new user
 
-// User.create()
+User.create()
+    .then(data =>
+        res.json(data))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 
 // PUT to update a user by its _id
 
-// User.findOneAndUpdate()
+User.findOneAndUpdate()
+    .then(data =>
+        res.json(data))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 
 // DELETE to remove user by its _id
 
-// User.findOneAndDelete()
+User.findOneAndDelete()
+    .then(data =>
+        res.json(data))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 
 // BONUS: Remove a user's associated thoughts when deleted.
 
