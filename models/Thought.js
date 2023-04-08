@@ -19,15 +19,15 @@ const thoughtSchema = new mongoose.Schema({
         required: true
     },
     // reactions: // Array of nested documents created with the reactionSchema
-    reactions: 
+    reactions: []
 
 });
 
 // Schema Settings
 // Create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
-thoughtSchema.virtual('reactionLength').get(function () {
-    const reactionLength = this.reactions.length;
-    return reactionLength;
+thoughtSchema.virtual('reactionCount').get(function () {
+    const reactionCount = this.reactions.length;
+    return reactionCount;
 })
 
 
