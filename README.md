@@ -1,4 +1,4 @@
-# High-Blood-Pressure-Buddies
+# Back-End-With-Mongoose
 
 ![Languages](https://img.shields.io/github/languages/top/rucatues/High-Blood-Pressure-Buddies)
 ![Code-Size](https://img.shields.io/github/languages/code-size/rucatues/High-Blood-Pressure-Buddies)
@@ -22,7 +22,7 @@
 
 ## Description  
 
-This is a social network where women with High Blood Pressure in pregnancy can come to discuss their diagnosis. This app follows the MVC paradigm, uses Express.js, and Mongoose as the ODM. 
+This is the backend of a social network where users can share their thoughts and react to others. Creates, reads, updates, and deletes users posts. This app follows the MVC paradigm, uses Express.js, and Mongoose as the ODM. 
 
 ## Screenshot  
 
