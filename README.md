@@ -64,4 +64,4 @@ MIT License
 
 ## Credits
 
-Guidance and support for this project was given by a UT bootcamp tutor.
+Guidance and support for this project was given by a UT bootcamp tutor and CodeAcademy Mongoose/MongoDB courses. 
