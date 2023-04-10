@@ -1,4 +1,4 @@
-// What consts are needed here?
+const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
     username: {

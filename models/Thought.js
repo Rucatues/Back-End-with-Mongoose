@@ -1,6 +1,4 @@
-// What consts are needed here ? and what to put in the const brakcets on line 3
-
-const { modelNames } = require("mongoose");
+const mongoose = require("mongoose");
 
 const thoughtSchema = new mongoose.Schema({
     thoughtText: {
