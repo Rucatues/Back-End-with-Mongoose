@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const { User } = require('../models');
 
-// -------------routes for api/users-------------
+// -------------user Controller-------------
 
-// GET all users
 
 const userController = {
     getAllUsers(req, res) {
+        // GET all users
         User.find({})
             .then(data =>
                 res.json(data))
