@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Thought = require('../models/Thought');
+const { User } = require('../models');
 
 // // -------------thought Controller-------------
 
@@ -19,7 +20,7 @@ const thoughtController = {
     getSingleThought(req, res) {
         // // GET to get a single thought by its _id
 
-        Thought.findOne()
+        Thought.findOne({ _id: req.params.thoughtId })
             .then(data =>
                 res.json(data))
             .catch(err => {
@@ -34,8 +35,23 @@ const thoughtController = {
         // (don't forget to push the created thought's _id to the associated user's thoughts array field)
 
         Thought.create(req.body)
-            .then(data =>
-                res.json(data))
+            .then(data => {
+                return User.findOneAndUpdate(
+                    {
+                        _id: req.body.userId
+                    },
+                    {
+                        $push: {
+                            thoughts: data._id
+                        }
+                    },
+                    {
+                        new: true
+                    })
+                    .then(userData => {
+                        res.json(userData)
+                    })
+            })
             .catch(err => {
                 console.log(err);
                 res.status(500).json(err);
@@ -45,7 +61,13 @@ const thoughtController = {
     updateThought(req, res) {
         // // PUT to update a thought by its _id
 
-        Thought.findOneAndUpdate()
+        Thought.findOneAndUpdate({ _id: req.params.thoughtId },
+            {
+                $set: req.body
+            },
+            {
+                new: true
+            })
             .then(data =>
                 res.json(data))
             .catch(err => {
@@ -58,9 +80,9 @@ const thoughtController = {
     deleteThought(req, res) {
         // // DELETE to remove a thought by its _id
 
-        Thought.findOneAndDelete()
+        Thought.findOneAndDelete({ _id: req.params.thoughtId })
             .then(data =>
-                res.json(data))
+                res.json("Your thought has been deleted."))
             .catch(err => {
                 console.log(err);
                 res.status(500).json(err);
