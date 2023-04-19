@@ -70,16 +70,57 @@ const userController = {
                 console.log(err);
                 res.status(500).json(err);
             });
+    },
+
+    // -------------routes for api/users/:userId/friends/:friendId-------------
+
+
+    addNewFriend(req, res) {
+        // POST to add a new friend to a user's friend list
+        User.findOneAndUpdate(
+            {
+                _id: req.params._id
+            },
+            {
+                $push: { friends: req.params.friendId }
+            },
+            {
+                new: true
+            }
+        )
+            .then(data =>
+                res.json(data))
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+            });
+    },
+
+    removeFriend(req, res) {
+        // DELETE to remove a friend from a user's friend list
+        User.findOneAndUpdate(
+            {
+                _id: req.params._id
+            },
+            {
+                $pull: {
+                    friends: req.params.friendId
+                }
+            },
+            {
+                new: true
+            }
+        )
+            .then(data =>
+                res.json(data))
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+            });
     }
-};
 
-// BONUS: Remove a user's associated thoughts when deleted.
-
-// -------------routes for api/users/:userId/friends/:friendId-------------
-
-// POST to add a new friend to a user's friend list
+}
 
 
-// DELETE to remove a friend from a user's friend list
 
 module.exports = userController;
