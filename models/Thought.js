@@ -1,6 +1,27 @@
 const { Schema, model, Types } = require("mongoose");
 const userSchema = require("./User");
 
+const reactionSchema = new Schema(
+    {
+        reactionId: {
+            type: Schema.Types.ObjectId
+        },
+        reactionBody: {
+            type: String,
+            required: true,
+            max: 280,
+        },
+        username: {
+            type: String,
+            required: true
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now
+        }
+    }
+)
+
 const thoughtSchema = new Schema({
     thoughtText: {
         type: String,
@@ -11,16 +32,25 @@ const thoughtSchema = new Schema({
     createdAt: {
         type: Date,
         // Set default value to the current timestamp
-        // Use a getter method to format the timestamp on query
+        default: Date.now
     },
     username: {
         type: String,
         required: true
     },
     // reactions: // Array of nested documents created with the reactionSchema
-    reactions: []
+    reactions: [reactionSchema]
 
-});
+}
+);
+
+// {
+//     toJSON: {
+//       getters: true,
+// virtuals: true
+//     },
+//     id: false,
+//   }
 
 // Schema Settings
 // Create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
