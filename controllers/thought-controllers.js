@@ -91,21 +91,61 @@ const thoughtController = {
     // // -------------routes for /api/thoughts/:thoughtId/reactions-------------
 
     createReaction(req, res) {
-
         // // POST to create a reaction stored in a single thought's reactions array field
         Thought.findOneAndUpdate(
-
+            {
+                _id: req.params.thoughtId
+            },
+            {
+                $push: { reactions: req.body }
+            },
+            {
+                new: true
+            }
         )
+            .then(data =>
+                res.json(data))
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+            });
     },
 
     deleteReaction(req, res) {
-
         // // DELETE to pull and remove a reaction by the reaction's reactionId value
-        Thought.findOneAndUpdate(
-
-        )
+        Thought.findOneAndDelete(
+            {
+                _id: req.params.thoughtId
+            })
+            .then(data => {
+                if (!data) {
+                    res.status(404).json({
+                        message: "We could not find a thought with this id!"
+                    });
+                    return User.findOneAndUpdate(
+                        {
+                            _id: req.params.userId
+                        },
+                        {
+                            $pull: {
+                                thoughts: req.params.thoughtId
+                            }
+                        },
+                        {
+                            new: true,
+                            runValidators: true
+                        }
+                    );
+                }
+                res.json(data);
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+            }
+            );
     }
 
-}
+};
 
 module.exports = thoughtController;
