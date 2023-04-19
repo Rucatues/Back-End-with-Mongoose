@@ -1,6 +1,7 @@
-const mongoose = require("mongoose");
+const { Schema, model, Types } = require("mongoose");
+const userSchema = require("./User");
 
-const thoughtSchema = new mongoose.Schema({
+const thoughtSchema = new Schema({
     thoughtText: {
         type: String,
         required: true,
@@ -31,6 +32,6 @@ thoughtSchema.virtual('reactionCount').get(function () {
 
 // creates a model using our schema. 
 // name of model is first argument, should be singular (Thought, not Thoughts). Mongoose will make it plural later for us. 
-const Thought = mongoose.model('Thought', thoughtSchema);
+const Thought = model('Thought', thoughtSchema);
 
 module.exports = Thought; 
