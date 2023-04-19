@@ -87,15 +87,25 @@ const thoughtController = {
                 console.log(err);
                 res.status(500).json(err);
             });
+    },
+    // // -------------routes for /api/thoughts/:thoughtId/reactions-------------
+
+    createReaction(req, res) {
+
+        // // POST to create a reaction stored in a single thought's reactions array field
+        Thought.findOneAndUpdate(
+
+        )
+    },
+
+    deleteReaction(req, res) {
+
+        // // DELETE to pull and remove a reaction by the reaction's reactionId value
+        Thought.findOneAndUpdate(
+
+        )
     }
 
 }
-
-
-// // -------------routes for /api/thoughts/:thoughtId/reactions-------------
-
-// // POST to create a reaction stored in a single thought's reactions array field
-
-// // DELETE to pull and remove a reaction by the reaction's reactionId value
 
 module.exports = thoughtController;

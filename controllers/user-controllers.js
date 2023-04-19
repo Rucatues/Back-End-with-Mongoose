@@ -98,28 +98,26 @@ const userController = {
 
     removeFriend(req, res) {
         // DELETE to remove a friend from a user's friend list
-        User.findOneAndUpdate(
+        User.findOneAndDelete(
             {
                 _id: req.params._id
-            },
-            {
-                $pull: {
-                    friends: req.params.friendId
+            })
+            .then(data => {
+                if (!data) {
+                    res.status(404).json({
+                        message: "We could not find a user with this id!"
+                    });
+                    return;
                 }
-            },
-            {
-                new: true
-            }
-        )
-            .then(data =>
-                res.json(data))
+                res.json(data);
+            })
             .catch(err => {
                 console.log(err);
                 res.status(500).json(err);
             });
     }
-
 }
+
 
 
 
