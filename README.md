@@ -1,13 +1,12 @@
 # Back-End-With-Mongoose
 
-![Languages](https://img.shields.io/github/languages/top/rucatues/High-Blood-Pressure-Buddies)
-![Code-Size](https://img.shields.io/github/languages/code-size/rucatues/High-Blood-Pressure-Buddies)
-![Last-Commit](https://img.shields.io/github/last-commit/rucatues/High-Blood-Pressure-Buddies)
+![Languages](https://img.shields.io/github/languages/top/rucatues/Back-End-with-Mongoose)
+![Code-Size](https://img.shields.io/github/languages/code-size/rucatues/Back-End-with-Mongoose)
+![Last-Commit](https://img.shields.io/github/last-commit/rucatues/Back-End-with-Mongoose)
 
 
 ## Table of Contents
 
-* [Link To Application](#link)
 * [Description](#description)
 * [Screenshot](#screenshot)
 * [Video Walkthrough](#video-walkthrough)
@@ -16,23 +15,19 @@
 * [Technologies Used](#technologies-used)
 * [License](#license)
 * [Credits](#credits)
-
-
-## Link  
-
-[Click here](pastelink) to view application deployed on Heroku.   
+ 
 
 ## Description  
 
-This is the backend of a social network where users can share their thoughts and react to others. Creates, reads, updates, and deletes users posts. This app follows the MVC paradigm, uses Express.js, and Mongoose as the ODM. 
+This is the backend of a social network where users can share their thoughts and with others. Creates, reads, updates, and deletes users posts. This app follows the MVC paradigm, uses Express.js, and Mongoose as the ODM. 
 
 ## Screenshot  
 
-![Screenshot](pastescreenshotpathhere)
+![Screenshot](assets/images/screenshot.png)
 
 ## Video Walkthrough
 
-[Click here](pastelink) to view video walkthrough of application.  
+[Click here](assets/images/screenshot.png) to view video walkthrough of application.  
 
 
 ## Installation
@@ -55,7 +50,6 @@ Run the following command in the root directory of your project to start the ser
 * Dotenv
 * Bootstrap for CSS framework
 * Insomina for route testing
-* Heroku for deployment
 
 
 ## License
